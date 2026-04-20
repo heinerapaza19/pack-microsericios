@@ -18,32 +18,36 @@ ProyectosMS2026/
 │   └── otros-servicios/ → Servicios adicionales del sistema
 
 ## 🛠️ Tecnologías utilizadas
-- Java 21
-- Spring Boot
-- Spring Cloud (Eureka, Gateway, Config Server)
-- Maven
-- Docker (opcional)
-- Swagger / Postman para pruebas de APIs
-- Visual Studio Code
-- IntelliJ IDEA
+
+- ☕ Java 21  
+- 🌱 Spring Boot  
+- ☁️ Spring Cloud (Eureka, Gateway, Config Server)  
+- 📦 Maven  
+- 🐳 Docker (opcional)  
+- 📮 Swagger / Postman para pruebas de APIs  
+- 💻 Visual Studio Code  
+- 🧠 IntelliJ IDEA  
 
 ## ⚙️ Características del sistema
-- Arquitectura de microservicios
-- Comunicación entre servicios mediante REST APIs
-- Registro y descubrimiento de servicios con Eureka
-- API Gateway como punto de entrada único
-- Configuración centralizada con Spring Cloud Config
-- Despliegue independiente por microservicio
+
+- 🧩 Arquitectura de microservicios  
+- 🔗 Comunicación entre servicios mediante REST APIs  
+- 🧭 Registro y descubrimiento de servicios con Eureka  
+- 🚪 API Gateway como punto de entrada único  
+- ⚙️ Configuración centralizada con Spring Cloud Config  
+- 🚀 Despliegue independiente por cada microservicio
 
 ## 📚 ¿Qué aprenderás con este proyecto?
+
 Con este proyecto aprenderás a:
-- Diseñar arquitecturas de microservicios profesionales
-- Desarrollar APIs REST con Spring Boot
-- Usar Spring Cloud (Eureka, Gateway y Config Server)
-- Manejar proyectos con Maven
-- Organizar proyectos backend en capas y módulos
-- Implementar buenas prácticas en Java moderno
-- Entender comunicación entre servicios distribuidos
+
+- 🏗️ Diseñar arquitecturas de microservicios profesionales  
+- 🌐 Desarrollar APIs REST con Spring Boot  
+- ☁️ Usar Spring Cloud (Eureka, Gateway y Config Server)  
+- 📦 Manejar proyectos con Maven  
+- 🧱 Organizar proyectos backend en capas y módulos  
+- 🧠 Implementar buenas prácticas en Java moderno  
+- 🔄 Entender la comunicación entre servicios distribuidos  
 
 ## 🚀 Cómo ejecutar el proyecto
 1. Clonar el repositorio:
@@ -66,7 +70,11 @@ Con este proyecto aprenderás a:
 - Postman para pruebas de APIs
 
 ## 👨‍💻 Autor
-Proyecto desarrollado con fines educativos para el aprendizaje de arquitectura de microservicios con Spring Boot y Java moderno.
 
+🚀 Proyecto desarrollado con fines educativos para el aprendizaje de arquitectura de microservicios con Spring Boot y Java moderno.
+
+💡 Diseñado para practicar buenas prácticas, modularización y desarrollo backend profesional con Java 21.
+
+📲 Sígueme en TikTok: @heinerdev
 ## 📌 Nota
 Este sistema es un proyecto de práctica enfocado en arquitectura backend moderna y buenas prácticas de desarrollo.
