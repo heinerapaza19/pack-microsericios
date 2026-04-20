@@ -2,8 +2,7 @@
 
 ## 📌 Descripción
 
-Este proyecto implementa una arquitectura de microservicios utilizando **Java 21** y el ecosistema de **Spring Boot**.
-El objetivo es gestionar diferentes servicios de forma independiente, escalable y mantenible.
+Sistema basado en arquitectura de microservicios desarrollado con **Java 21** y **Spring Boot**, organizado en módulos de infraestructura y servicios de negocio.
 
 ---
 
@@ -15,69 +14,70 @@ El objetivo es gestionar diferentes servicios de forma independiente, escalable 
 * 🐳 Docker
 * 📦 Maven
 * 🗄️ MySQL
-* 🔎 Eureka Server (Service Discovery)
+* 🔎 Eureka Server
 * 🚪 API Gateway
-* 📄 Swagger / OpenAPI
+* 📄 Swagger
 
 ---
 
 ## 📂 Estructura del proyecto
 
-```
+```bash
 ProyectosMS2026/
 │
-├── config-server/
-├── registry-server/
-├── gateway/
-├── services/
-│   ├── producto/
-│   ├── user/
-│   └── otros-servicios/
+├── infra/
+│   ├── config-server/
+│   ├── registry-server/
+│   └── gateway/
 │
-└── docker-compose.yml
+├── services/
+│   ├── catalogo/
+│   └── producto/
+│
+├── docker-compose.yml
+└── README.md
 ```
 
 ---
 
-## ⚙️ Configuración del entorno
+## ⚙️ Componentes del sistema
 
-### 🔹 Requisitos
+### 🔹 Infraestructura
 
-* Java 21 instalado
-* Maven instalado
-* Docker y Docker Compose
-* Git
-
----
-
-## ▶️ Ejecución del proyecto
-
-### 1. Clonar repositorio
-
-```
-git clone https://github.com/heinerapaza19/pack-microsericios.git
-cd pack-microsericios
-```
+* **config-server** → Configuración centralizada
+* **registry-server** → Registro de servicios (Eureka)
+* **gateway** → Punto de entrada a los microservicios
 
 ---
 
-### 2. Levantar Config Server
+### 🔹 Microservicios
 
-```
+* **catalogo** → Gestión de catálogo
+* **producto** → Gestión de productos
+
+---
+
+## ▶️ Orden de ejecución (IMPORTANTE)
+
+Ejecutar en este orden:
+
+### 1. Config Server
+
+```bash
 cd infra/config-server
 mvn spring-boot:run
 ```
 
 ---
 
-### 3. Levantar Eureka Server
+### 2. Registry Server (Eureka)
 
-```
+```bash
 cd ../registry-server
 mvn spring-boot:run
 ```
 
-Acceder:
+Abrir en navegador:
 
 ```
 http://localhost:7081
@@ -85,21 +85,28 @@ http://localhost:7081
 
 ---
 
-### 4. Levantar API Gateway
+### 3. API Gateway
 
-```
+```bash
 cd ../gateway
 mvn spring-boot:run
 ```
 
 ---
 
-### 5. Levantar microservicios
+### 4. Microservicios
 
-Ejemplo:
+#### Catalogo
 
+```bash
+cd ../../services/catalogo
+mvn spring-boot:run
 ```
-cd services/producto
+
+#### Producto
+
+```bash
+cd ../producto
 mvn spring-boot:run
 ```
 
@@ -107,31 +114,31 @@ mvn spring-boot:run
 
 ## 🐳 Ejecución con Docker
 
-Desde la raíz del proyecto:
+Desde la raíz:
 
-```
+```bash
 docker-compose up -d
 ```
 
 ---
 
-## 📡 Endpoints principales
+## 📡 Ejemplo de endpoints
 
 ### Producto
 
 ```
-GET /api/v1/productos
-GET /api/v1/productos/{id}
-POST /api/v1/productos
-PUT /api/v1/productos/{id}
+GET    /api/v1/productos
+GET    /api/v1/productos/{id}
+POST   /api/v1/productos
+PUT    /api/v1/productos/{id}
 DELETE /api/v1/productos/{id}
 ```
 
 ---
 
-## 📄 Documentación API
+## 📄 Swagger
 
-Swagger disponible en:
+Disponible en:
 
 ```
 http://localhost:9091/swagger-ui.html
@@ -139,42 +146,28 @@ http://localhost:9091/swagger-ui.html
 
 ---
 
-## 🧪 Pruebas
+## ⚠️ Recomendaciones
 
-Puedes usar:
-
-* Postman
-* Thunder Client (VS Code)
+* Ejecutar primero la infraestructura
+* Verificar puertos disponibles
+* Configurar correctamente `application.yml`
+* Revisar logs en caso de error
 
 ---
 
 ## 👨‍💻 Autor
 
 **Heiner Apaza Apaza**
-Estudiante de Ingeniería de Sistemas - UPeU
+Ingeniería de Sistemas - UPeU
 
 ---
 
-## 📌 Notas
+## ⭐ Buenas prácticas
 
-* Asegúrate de que los puertos no estén ocupados
-* Configura correctamente la base de datos en `application.yml`
-* Ejecuta primero los servicios de infraestructura
-
----
-
-## ⭐ Buenas prácticas implementadas
-
-* Separación por microservicios
-* Uso de API Gateway
-* Service Discovery con Eureka
+* Separación por capas
+* Arquitectura de microservicios
 * Configuración centralizada
+* Uso de API Gateway
 * Contenerización con Docker
-
----
-
-## 📞 Soporte
-
-Si tienes problemas, revisa logs o verifica que todos los servicios estén activos correctamente.
 
 ---
