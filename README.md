@@ -75,6 +75,6 @@ Con este proyecto aprenderás a:
 
 💡 Diseñado para practicar buenas prácticas, modularización y desarrollo backend profesional con Java 21.
 
-📲 Sígueme en TikTok: @heinerdev
+📲 Sígueme en TikTok: https://www.tiktok.com/@heinerdev
 ## 📌 Nota
 Este sistema es un proyecto de práctica enfocado en arquitectura backend moderna y buenas prácticas de desarrollo.
