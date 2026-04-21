@@ -19,3 +19,9 @@ logging:
   level:
     root: INFO
 
+<<<<<<< HEAD
+=======
+eureka:
+  instance:
+    prefer-ip-address: true
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b

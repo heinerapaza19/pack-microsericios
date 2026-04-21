@@ -4,6 +4,7 @@ import com.upeu.producto.client.CatalogoClient;
 import com.upeu.producto.dto.CategoriaDto;
 import com.upeu.producto.dto.ProductoRequest;
 import com.upeu.producto.dto.ProductoResponse;
+<<<<<<< HEAD
 import com.upeu.producto.mapper.ProductoMapper;
 import com.upeu.producto.repository.ProductoRepository;
 import com.upeu.producto.service.ProductoService;
@@ -16,6 +17,24 @@ import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @RequiredArgsConstructor
+=======
+import com.upeu.producto.entity.Producto;
+import com.upeu.producto.mapper.ProductoMapper;
+import com.upeu.producto.repository.ProductoRepository;
+import com.upeu.producto.service.ProductoService;
+
+import java.util.List;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 public class ProductoServiceImpl implements ProductoService {
 
 	private final ProductoRepository productoRepository;
@@ -37,6 +56,7 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	@Transactional(readOnly = true)
+<<<<<<< HEAD
 	public ProductoResponse findById(Long id) {
 		var producto = productoRepository.findById(id)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Producto no encontrado: " + id));
@@ -50,18 +70,33 @@ public class ProductoServiceImpl implements ProductoService {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Producto no encontrado: " + id));
 
 		CategoriaDto categoria = catalogoClient.findCategoriaById(producto.getIdCategoria());
+=======
+	public ProductoResponse findDetalleById(Integer id) {
+
+		log.info("Buscando detalle de producto con ID: {}", id);
+
+		Producto producto = getProductoById(id.longValue());
+
+		CategoriaDto categoria = catalogoClient.findCategoriaById(
+				producto.getIdCategoria().longValue()
+		);
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 
 		return ProductoResponse.builder()
 				.id(producto.getId())
 				.nombre(producto.getNombre())
 				.descripcion(producto.getDescripcion())
 				.idCategoria(producto.getIdCategoria())
+<<<<<<< HEAD
 				.precio(producto.getPrecio())
 				.stock(producto.getStock())
+=======
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 				.categoria(categoria)
 				.build();
 	}
 
+<<<<<<< HEAD
 	@Override
 	@Transactional
 	public ProductoResponse update(Long id, ProductoRequest request) {
@@ -103,3 +138,10 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 }
 
+=======
+	private Producto getProductoById(Long id) {
+		return productoRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+	}
+}
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b

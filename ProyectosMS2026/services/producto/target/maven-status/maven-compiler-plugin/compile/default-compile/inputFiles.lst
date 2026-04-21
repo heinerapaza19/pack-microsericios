@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\client\CatalogoClient.java
 C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\config\OpenApiConfig.java
 C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\controller\GatewayInstanciasController.java
@@ -12,3 +13,18 @@ C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\Producto
 C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\repository\ProductoRepository.java
 C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\service\impl\ProductoServiceImpl.java
 C:\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\service\ProductoService.java
+=======
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\client\CatalogoClient.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\config\OpenApiConfig.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\controller\GatewayInstanciasController.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\controller\ProductoController.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\dto\CategoriaDto.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\dto\ProductoRequest.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\dto\ProductoResponse.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\entity\Producto.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\mapper\ProductoMapper.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\ProductoApplication.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\repository\ProductoRepository.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\service\impl\ProductoServiceImpl.java
+D:\upeu\proyecto\ms\ProyectosMS2026\services\producto\src\main\java\com\upeu\producto\service\ProductoService.java
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b

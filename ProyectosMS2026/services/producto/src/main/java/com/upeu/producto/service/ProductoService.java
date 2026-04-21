@@ -9,6 +9,7 @@ public interface ProductoService {
 
 	ProductoResponse create(ProductoRequest request);
 
+<<<<<<< HEAD
 	ProductoResponse findById(Long id);
 
 	ProductoResponse findDetalleById(Long id);
@@ -18,5 +19,8 @@ public interface ProductoService {
 	void delete(Long id);
 
 	ProductoResponse descontarStock(Long id, Integer cantidad);
+=======
+	ProductoResponse findDetalleById(Integer id);
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 }
 

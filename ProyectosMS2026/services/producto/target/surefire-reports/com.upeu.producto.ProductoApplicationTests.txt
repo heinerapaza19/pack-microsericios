@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.upeu.producto.ProductoApplicationTests
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 88.42 s -- in com.upeu.producto.ProductoApplicationTests
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.76 s -- in com.upeu.producto.ProductoApplicationTests
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b

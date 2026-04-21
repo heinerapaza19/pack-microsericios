@@ -5,6 +5,10 @@ import com.upeu.producto.dto.ProductoResponse;
 import com.upeu.producto.entity.Producto;
 
 public final class ProductoMapper {
+<<<<<<< HEAD
+=======
+
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 	private ProductoMapper() {
 	}
 
@@ -12,9 +16,14 @@ public final class ProductoMapper {
 		return Producto.builder()
 				.nombre(request.getNombre())
 				.descripcion(request.getDescripcion())
+<<<<<<< HEAD
 				.idCategoria(request.getIdCategoria())
 				.precio(request.getPrecio())
 				.stock(request.getStock())
+=======
+				.precio(request.getPrecio())
+				.idCategoria(request.getIdCategoria()) // 🔥 FIX AQUÍ
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 				.build();
 	}
 
@@ -23,6 +32,7 @@ public final class ProductoMapper {
 				.id(entity.getId())
 				.nombre(entity.getNombre())
 				.descripcion(entity.getDescripcion())
+<<<<<<< HEAD
 				.idCategoria(entity.getIdCategoria())
 				.precio(entity.getPrecio())
 				.stock(entity.getStock())
@@ -30,3 +40,10 @@ public final class ProductoMapper {
 	}
 }
 
+=======
+				.precio(entity.getPrecio())
+				.idCategoria(entity.getIdCategoria()) // 🔥 también aquí
+				.build();
+	}
+}
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b

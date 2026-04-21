@@ -6,8 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="pedido" />
         <module name="config-server" />
+=======
+        <module name="config-server" />
+        <module name="gateway" />
+        <module name="registry-server" />
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
       </profile>
       <profile name="Annotation profile for producto" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -15,6 +21,10 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
+<<<<<<< HEAD
+=======
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
         </processorPath>
         <module name="producto" />
       </profile>
@@ -24,7 +34,10 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
+<<<<<<< HEAD
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
+=======
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
         </processorPath>
         <module name="catalogo" />
       </profile>
@@ -34,8 +47,14 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="catalogo" options="-parameters" />
       <module name="config-server" options="-parameters" />
+<<<<<<< HEAD
       <module name="pedido" options="-parameters" />
       <module name="producto" options="-parameters" />
+=======
+      <module name="gateway" options="-parameters" />
+      <module name="producto" options="-parameters" />
+      <module name="registry-server" options="-parameters" />
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
     </option>
   </component>
 </project>

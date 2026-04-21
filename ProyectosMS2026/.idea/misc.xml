@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+<<<<<<< HEAD
   <component name="KubernetesApiProvider">{}</component>
+=======
+  <component name="KubernetesApiProvider"><![CDATA[{}]]></component>
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/services/catalogo/pom.xml" />
         <option value="$PROJECT_DIR$/infra/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/services/producto/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/services/pedido/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/infra/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/infra/registry-server/pom.xml" />
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
       </list>
     </option>
   </component>

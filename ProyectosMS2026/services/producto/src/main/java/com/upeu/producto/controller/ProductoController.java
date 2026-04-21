@@ -2,6 +2,7 @@ package com.upeu.producto.controller;
 
 import com.upeu.producto.dto.ProductoRequest;
 import com.upeu.producto.dto.ProductoResponse;
+<<<<<<< HEAD
 import com.upeu.producto.dto.StockAjusteRequest;
 import com.upeu.producto.service.ProductoService;
 import jakarta.validation.Valid;
@@ -19,6 +20,18 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+=======
+import com.upeu.producto.service.ProductoService;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 
 @RestController
 @RequiredArgsConstructor
@@ -27,6 +40,7 @@ public class ProductoController {
 
 	private final ProductoService productoService;
 
+<<<<<<< HEAD
 	@GetMapping
 	public List<ProductoResponse> findAll() {
 		return productoService.findAll();
@@ -42,12 +56,22 @@ public class ProductoController {
 		return ResponseEntity.ok(productoService.findDetalleById(id));
 	}
 
+=======
+	// ✅ LISTAR TODOS
+	@GetMapping
+	public ResponseEntity<List<ProductoResponse>> findAll() {
+		return ResponseEntity.ok(productoService.findAll());
+	}
+
+	// ✅ CREAR
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ProductoResponse create(@Valid @RequestBody ProductoRequest request) {
 		return productoService.create(request);
 	}
 
+<<<<<<< HEAD
 	@PutMapping("/{id}")
 	public ResponseEntity<ProductoResponse> update(@PathVariable Long id, @Valid @RequestBody ProductoRequest request) {
 		return ResponseEntity.ok(productoService.update(id, request));
@@ -66,3 +90,16 @@ public class ProductoController {
 	}
 }
 
+=======
+
+
+	// ✅ DETALLE (con categoría)
+	@GetMapping("/detalle/{id}")
+	public ResponseEntity<?> findDetalleById(@PathVariable Integer id) {
+		return ResponseEntity.ok(productoService.findDetalleById(id));
+	}
+
+
+
+}
+>>>>>>> e30ec6ca0401742abeeeb038f1524e086cd71b1b
