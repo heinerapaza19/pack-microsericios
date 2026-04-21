@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db-ventas:
+    image: mysql:8.0
+    container_name: db-ventas
+    environment:
+      MYSQL_DATABASE: ventas_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  ms-ventas:
+    build: .
+    container_name: ms-ventas
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db-ventas
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db-ventas:3306/ventas_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root

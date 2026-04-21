@@ -1,0 +1,54 @@
+name: ventas-prod
+
+version: "3.9"
+
+services:
+
+  mysql-ventas:
+    image: mysql:8.0
+    container_name: mysql-ventas
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ventasdb
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql_ventas_data:/var/lib/mysql
+
+    networks:
+      - ms-net
+
+
+  ventas-service:
+    build: .
+    container_name: ventas-service
+    restart: unless-stopped
+
+    depends_on:
+      - mysql-ventas
+
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-ventas:3306/ventasdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+    ports:
+      - "9999:9999"
+
+    networks:
+      - ms-net
+
+
+volumes:
+  mysql_ventas_data:
+
+
+networks:
+  ms-net:
+    name: ms-net

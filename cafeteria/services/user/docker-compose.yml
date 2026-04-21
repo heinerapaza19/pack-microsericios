@@ -1,0 +1,55 @@
+name: user-prod
+
+version: "3.9"
+
+services:
+  mysql-user:
+    image: mysql:8.4
+    container_name: mysql-user
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userdb
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql_user_data:/var/lib/mysql
+
+    networks:
+      - ms-net
+
+
+  user-service:
+    build: .
+    container_name: user-service
+    restart: unless-stopped
+
+    depends_on:
+      - mysql-user
+
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-user:3306/userdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+      CONFIG_SERVER_URL: http://config-server:7071
+
+    ports:
+      - "8181:8181"
+
+    networks:
+      - ms-net
+
+
+volumes:
+  mysql_user_data:
+
+
+networks:
+  ms-net:
+    name: ms-net

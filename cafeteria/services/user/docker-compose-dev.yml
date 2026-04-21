@@ -1,0 +1,62 @@
+version: "3.9"
+
+name: user-dev
+
+services:
+
+  mysql-user-dev:
+    image: mysql:8.4
+    container_name: mysql-user-dev
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userdb_dev
+
+    ports:
+      - "3309:3306"
+
+    volumes:
+      - mysql_user_dev_data:/var/lib/mysql
+
+    networks:
+      - dev-net
+
+
+  user-service-dev:
+    build: .
+    container_name: user-service-dev
+    restart: unless-stopped
+
+    depends_on:
+      - mysql-user-dev
+
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-user-dev:3306/userdb_dev
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+      # 🔥 IMPORTANTE (ANTES ESTABA MAL)
+      CONFIG_SERVER_URL: http://config-server:7071
+
+    ports:
+      - "8181:8181"
+
+    networks:
+      - dev-net
+      - ms-net   # 👈 conexión con config-server
+
+
+volumes:
+  mysql_user_dev_data:
+
+
+networks:
+  dev-net:
+    name: dev-net
+
+  ms-net:
+    external: true
+    name: ms-net
